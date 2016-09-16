@@ -33,7 +33,7 @@ ffnord::mesh {
     fastd_peers_git => 'git://github.com/Freemesh-Denmark/peers.git',
 
     # the whole net: 10.212.0.1 - 10.212.15.254
-    dhcp_ranges => [ '10.212.0.2 10.212.4.254'],
+    dhcp_ranges => [ '10.212.0.2 10.212.2.254'],
     dns_servers => [ '10.212.0.1'
                    , '10.212.1.1'
                    , '10.212.2.1'
