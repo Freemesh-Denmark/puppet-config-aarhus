@@ -55,6 +55,13 @@ sed 's/=ffnord/=fmdk/g' /usr/local/bin/check-services -i
 
 #zurück zu root
 cd /root
+git clone https://github.com/Freifunk-Nord/nord-watchdog
+chmod +x /root/nord-watchdog/usr/local/bin/vpn-watchdog
+#add this in crontab:
+cat > /etc/cron.d/vpn-watchdog <<EOF
+# VPN Watchdog that checks if openvpn is still running correctly
+*/5 * * * * root /root/nord-watchdog/usr/local/bin/vpn-watchdog
+EOF
 
 #USER TODO:
 #manifest.pp, $keys, mesh_peerings.yaml nach root legen
