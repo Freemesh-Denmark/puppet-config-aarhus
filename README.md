@@ -10,6 +10,12 @@
 
 #### 3. start the pre, puppet and post stcript
 
+adapt the configuration in the head at
+
+    vi pre-puppet.sh
+
+start the pre-puppet.sh script
+
     ./pre-puppet.sh
 
 follow instructions at the end of the script. make sure you are in a screen session
