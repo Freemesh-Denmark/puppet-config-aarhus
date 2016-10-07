@@ -20,7 +20,7 @@ apt-get update && apt-get upgrade && apt-get dist-upgrade
 #MOTD setzen
 rm /etc/motd
 echo "*********************************************************" >>/etc/motd
-echo " $NAME - Gateway $NAME " >>/etc/motd
+echo " $NAME - Gateway $SUBDOMAIN_PREFIX$VPN_NUMBER $NAME " >>/etc/motd
 echo " Hoster: $OPERATOR *" >>/etc/motd
 echo "*******************************************************" >>/etc/motd
 echo " " >>/etc/motd
