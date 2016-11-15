@@ -8,7 +8,12 @@
 
     echo 'secret "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";' > /root/fastd_secret.key
 
-#### 3. start the pre, puppet and post stcript
+### 3. copy this file to the root home folder:
+
+    cp manifest.pp /root/gateway.pp
+and adapt all needed settings to the new gateway
+
+#### 4. start the pre, puppet and post script
 
 adapt the configuration in the head at
 
@@ -18,9 +23,11 @@ start the pre-puppet.sh script
 
     ./pre-puppet.sh
 
-follow instructions at the end of the script. make sure you are in a screen session
+follow instructions at the end of the script. **make sure you are in a screen session**
 
     screen
-    puppet apply --verbose manifest.pp
+    puppet apply --verbose /root/gateway.pp
+    # start puppet again in case something went wrong:
+    puppet apply --verbose /root/gateway.pp
     build-firewall
-    /post-puppet.sh
+    bash post-puppet.sh
