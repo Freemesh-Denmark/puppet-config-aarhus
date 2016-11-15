@@ -54,6 +54,11 @@ chmod +x check-services
 chown root:root check-services
 sed 's/=ffnord/=fmdk/g' /usr/local/bin/check-services -i
 
+# uncomment and add aliases
+sed -i '/alias/s/^# //g' /root/.bashrc
+echo 'alias ..="cd .."' >> /root/.bashrc
+echo 'alias grep="grep --color=auto"' >> /root/.bashrc
+
 # back in /root
 cd /root
 git clone https://github.com/Freifunk-Nord/nord-watchdog
