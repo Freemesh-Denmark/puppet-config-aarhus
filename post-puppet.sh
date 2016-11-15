@@ -13,7 +13,7 @@ IP6PREFIX=....
 #sed s~"usr/share/nginx/www;"~"opt/www;"~g -i /etc/nginx/sites-enabled/default
 
 #DNS Server
-echo "dns-search gw$VPN_NUMBER.$DOMAIN" >>/etc/network/interfaces
+sed -i .bak "/eth0 inet static/a \  dns-search gw$VPN_NUMBER.$DOMAIN" >>/etc/network/interfaces
 
 rm /etc/resolv.conf
 cat >> /etc/resolv.conf <<-EOF
