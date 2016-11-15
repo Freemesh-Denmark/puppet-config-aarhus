@@ -4,7 +4,7 @@
 VPN_NUMBER=0
 DOMAIN="freemesh.dk"
 TLD="fmdk"
-IP6PREFIX=....
+IP6PREFIX=fd35:f308:a922:0000
 
 ##NGINX if needed to serve the firmware for the auto-updater
 #apt-get install -y nginx
