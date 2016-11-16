@@ -54,10 +54,17 @@ chmod +x check-services
 chown root:root check-services
 sed 's/=ffnord/=fmdk/g' /usr/local/bin/check-services -i
 
-# uncomment and add aliases
-sed -i '/alias/s/^# //g' /root/.bashrc
-echo 'alias ..="cd .."' >> /root/.bashrc
-echo 'alias grep="grep --color=auto"' >> /root/.bashrc
+# add aliases
+cat <<-EOF>> /root/.bashrc
+  export LS_OPTIONS='--color=auto'
+  eval" \`dircolors\`"
+  alias ls='ls \$LS_OPTIONS'
+  alias ll='ls \$LS_OPTIONS -lah'
+  alias l='ls \$LS_OPTIONS -lA'
+  alias grep="grep --color=auto"
+  alias ..="cd .."
+EOF
+
 
 # back in /root
 cd /root
