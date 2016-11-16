@@ -57,6 +57,9 @@ cp /etc/radvd.conf /etc/radvd.conf.d/interface-br-$TLD.conf
 # set conntrack_max higher so more connections are possible:
 /sbin/sysctl -w net.netfilter.nf_conntrack_max=1048576 && echo net.ipv4.netfilter.ip_conntrack_max = 1048576 >> /etc/sysctl.conf
 
+# increase the hop penalty
+echo "60">/sys/class/net/bat-$TLD/mesh/hop_penalty
+
 # check if everything is running:
 service fastd restart
 service isc-dhcp-server restart
