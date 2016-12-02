@@ -82,9 +82,9 @@ class {
 #    zabbixserver => "10.35.31.1";
 #}
 
-class { 
-    'ffnord::alfred': master => true # there may be only one gateway with master => true!
-}
+#class { 
+#    'ffnord::alfred': master => true # there may be only one gateway with master => true!
+#}
 
 class { 'ffnord::etckeeper': }
 
