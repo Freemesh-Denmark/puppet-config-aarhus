@@ -85,4 +85,5 @@ echo 'now copy the files manifest.pp and mesh_peerings.yaml to /root and make su
 echo '####################################################################################'
 echo '########### don´t run the following scripts without screen sesssion!!! #############'
 echo '####################################################################################'
+cd -
 cat $(dirname $0 )/README.md
