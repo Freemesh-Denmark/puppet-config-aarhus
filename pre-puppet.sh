@@ -5,9 +5,11 @@ NAME="Freemesh Denmark"
 OPERATOR="Robin (Aarhus)"
 CHANGELOG="https://ffhh.pads.ccc.de/freemesh-dk-vpn0-install-log"
 HOST_PREFIX="gw"
+MESH_CODE="fmdk"
 SUBDOMAIN_PREFIX="gw"
 VPN_NUMBER=0
 DOMAIN="freemesh.dk"
+SUDOUSERNAME="rubo77"
 
 #backborts einbauen
 echo "deb http://http.debian.net/debian wheezy-backports main" >>/etc/apt/sources.list
@@ -16,6 +18,7 @@ echo "deb http://http.debian.net/debian wheezy-backports main" >>/etc/apt/source
 apt-get update && apt-get upgrade && apt-get dist-upgrade
 
 #add users:
+useradd -U -G sudo -m $SUDOUSERNAME
 
 #MOTD setzen
 rm /etc/motd
@@ -53,7 +56,7 @@ wget --no-check-certificate https://raw.githubusercontent.com/Tarnatos/check-ser
 chmod +x check-services
 chown root:root check-services
 sed -i 's/=ffnord/=fmdk/g' /usr/local/bin/check-services
-sed -i s/=nord-gw/=ffki-vpn/g /usr/local/bin/check-services
+sed -i s/=nord-gw/=fmdk-gw/g /usr/local/bin/check-services
 
 # add aliases
 cat <<-EOF>> /root/.bashrc
