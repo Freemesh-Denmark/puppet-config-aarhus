@@ -11,7 +11,7 @@ class { 'ffnord::params':
   gw_control_ips => "217.70.197.1 89.27.152.1 138.201.16.163 8.8.8.8", # Define target to ping against for function check
   max_backlog  => 5000, # Define the maximum packages in buffer
 
-  $batman_version => 15,            # B.A.T.M.A.N. adv version
+  batman_version => 15,           # B.A.T.M.A.N. adv version
 }
 
 # You can repeat this mesh block for every community you support
@@ -31,8 +31,8 @@ ffnord::mesh { 'mesh_ffgc':
   fastd_peers_git => 'git://github.com/Freemesh-Denmark/peers.git',
   # the whole net: 10.212.0.1 - 10.212.15.254
   dhcp_ranges => [ '10.212.0.2 10.212.4.254'],
-  dns_servers => [ '10.212.0.1' ],               # should be the same as $router_id
-  fastd_verify=> 'true',
+  dns_servers => [ '10.212.0.1' ],                # should be the same as $router_id
+  fastd_verify=> 'true',                          
 }
 
 ffnord::named::zone {
